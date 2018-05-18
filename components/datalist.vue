@@ -1,5 +1,5 @@
 <template>
-  <div class="datalist" v-show="!!val">
+  <div class="datalist" v-show="show">
     <ul>
       <li v-for="item in associative" :key="item" @click="setVal(item)">
         {{item}}
@@ -31,7 +31,7 @@ export default {
   },
   computed: {
     associative () {
-      let associative = this.list.filter( item=> {
+      let associative = this.list.filter(item => {
         if (item) {
           return item.indexOf(this.val) >= 0
         } else {
@@ -44,12 +44,11 @@ export default {
       }
 
       return associative
+    },
+    show () {
+      let hit = this.list.some(item => item === this.val)
+      return !!this.val && !hit
     }
-  },
-  watch: {
-  },
-  methods: {
-  
   }
 }
 </script>

@@ -8845,10 +8845,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
 
       return associative;
+    },
+    show() {
+      let hit = this.list.some(item => item === this.val);
+      return !!this.val && !hit;
     }
-  },
-  watch: {},
-  methods: {}
+  }
 });
 
 /***/ }),
@@ -9241,8 +9243,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     directives: [{
       name: "show",
       rawName: "v-show",
-      value: (!!_vm.val),
-      expression: "!!val"
+      value: (_vm.show),
+      expression: "show"
     }],
     staticClass: "datalist"
   }, [_c('ul', _vm._l((_vm.associative), function(item) {
