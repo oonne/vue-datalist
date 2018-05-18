@@ -8848,7 +8848,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     show() {
       let hit = this.list.some(item => item === this.val);
-      return !!this.val && !hit;
+      return !!this.val && this.associative.length && !hit;
     }
   }
 });
