@@ -43,8 +43,7 @@ module.exports = {
                                 ]
                             }
                         }
-                    },
-                    'sass-loader'
+                    }
                 ]
             },
             { 
